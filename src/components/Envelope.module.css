@@ -1,0 +1,285 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-fire-red");
+@import url("https://fonts.cdnfonts.com/css/zx-spectrum-7");
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr;
+
+}
+
+.header {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.title {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 2rem;
+  position: relative;
+  color: #064273;
+  letter-spacing: 3px;
+  -webkit-text-fill-color: #FFCC01;
+  -webkit-text-stroke: 2px;
+}
+
+
+.main {
+  display: grid;
+  grid-template-columns: 50vh 1fr;
+}
+
+.left {
+  margin: 5rem auto;
+  padding: 2rem;
+  border: 10px solid #FFCC01;
+}
+
+.left h1 {
+  margin-top: 1rem;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+  color: #064273;
+  position: absolute;
+  display: inline;
+  justify-content: center;
+}
+
+.left h1::first-letter {
+  font-family: 'Pokemon Solid', sans-serif;
+  color: #FFCC01;
+  letter-spacing: 0.5rem;
+}
+
+.pokeimage {
+  width: 100px;
+  height: 100px;
+  display: inline;
+}
+
+
+
+/* --------------------CENTER-------------------- */
+
+.center {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_main {
+  display: grid;
+  place-content: center;
+}
+
+.envelope_area {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.envelope_wrapper {
+  background: var(--bg-envelope-color);
+  box-shadow: 0 0 40px var(--shadow-color);
+}
+
+.envelope {
+  position: absolute;
+  top: 66%;
+  right: 20%;
+  width: 450px;
+  height: 330px;
+}
+
+
+/*INSIDER*/
+.envelope::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  border-top: 165px solid var(--envelope-tab);
+  border-right: 225px solid transparent;
+  border-left: 225px solid transparent;
+  top: 0;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
+}
+
+
+/*OUTSIDER*/
+.envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  border-top: 165px solid transparent;
+  border-left: 225px solid var(--envelope-cover);
+  border-right: 225px solid var(--envelope-cover);
+  border-bottom: 165px solid var(--envelope-tab);
+  bottom: 0;
+}
+
+
+.letter {
+  position: absolute;
+  right: calc(22% + 2px);
+  bottom: 0;
+  width: 55%;
+  height: 100%;
+  background: var(--white);
+  border-top: 5px double;
+  border-bottom: 5px double;
+  border-left: 3px dotted;
+  border-right: 3px dotted;
+  transition: all 1s ease-in-out;
+  padding: 20px 10px;
+}
+
+.text {
+  font-family: "ZX Spectrum7 Bold", sans-serif;
+  font-size: 16px;
+  color: var(--txt-color);
+  text-align: left;
+}
+
+.text .download {
+  color: #064273;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.text h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+
+.text h2 {
+  margin-top: 10px;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 17px;
+  position: absolute;
+  right: 40%;
+  color: #064273;
+  -webkit-text-fill-color: #FFCC01;
+  -webkit-text-stroke: 1px;
+}
+
+.lapras {
+  position: absolute;
+  top: 85%;
+  right: 29%;
+  width: 100px;
+  height: 100px;
+  z-index: 4;
+  transform: translate(-50%, -20%) rotate(0deg);
+  transition: transform 0.5s ease-in-out 0.5s;
+  cursor: pointer;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+
+  .envelope {
+    position: absolute;
+    top: 45%;
+    right: 10%;
+    width: 450px;
+    height: 330px;
+  }
+
+  .lapras {
+    position: absolute;
+    top: 60%;
+    right: calc(20% + 2px);
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(0deg);
+    transition: transform 0.5s ease-in-out 0.5s;
+    cursor: pointer;
+  }
+
+}
+
+@media (min-width: 1920px) {
+  .container {
+    width: 1570px;
+  }
+
+  .envelope {
+    position: absolute;
+    top: 46%;
+    right: 35%;
+    width: 450px;
+    height: 330px;
+  }
+
+
+  .lapras {
+    position: absolute;
+    top: 60%;
+    right: calc(41% + 5px);
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(0deg);
+    transition: transform 0.5s ease-in-out 0.5s;
+    cursor: pointer;
+  }
+
+}
+
+@media (min-width: 2560px) {
+
+  .lapras {
+    position: absolute;
+    top: 60%;
+    right: calc(40% + 5px);
+    width: 100px;
+    height: 100px;
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(0deg);
+    transition: transform 0.5s ease-in-out 0.5s;
+    cursor: pointer;
+  }
+
+}
+
+/*RESPONSIVIDADE*/
+
+.flap>.envelope::before {
+  z-index: 0;
+  transform: rotateX(180deg);
+}
+
+
+/*
+  .flap>.envelope .letter é responsável por remover a carta de dentro
+  A carta é removida com a adição do bottom
+  Transform scale é responsável pela escala/taman: da carta exibida
+  transition-delay é o tempo que leva para essa animação acontecer
+*/
+
+
+.flap>.envelope .letter {
+  bottom: 200px;
+  transform: scale(1.8);
+  transition-delay: 1s;
+}
+
+
+.flap>.heart {
+  transform: rotate(90deg);
+  transition-delay: 0.2s;
+}
